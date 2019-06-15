@@ -16,41 +16,15 @@ class Dashboard extends Component {
     return (
       <div>
         <RenderNavbar />
-        <HeadText>Test your website</HeadText>
+        <HeadText>Door creator! yay</HeadText>
         <ViewDiv>
           <MainTemplate>
-            <Footer>
-              <NameText>Try the URL:</NameText>{" "}
-              <Line>
-                <InputGroup>
-                  <Input />
-                  <InputGroupAddon addonType="append">
-                    <Button color="primary">Analyse</Button>
-                  </InputGroupAddon>
-                </InputGroup>
-              </Line>
-            </Footer>
+
           </MainTemplate>
         </ViewDiv>
-        <ViewDiv>
-          <MainTemplate>
-            <Footer>
-              <BottomText>SCORE RANGE:</BottomText> <PointRed />{" "}
-              <HeaderText>Negative (-1 – -0,75)</HeaderText> <PointOrange />{" "}
-              <HeaderText>Neutral (-0,75 – 0,25)</HeaderText> <PointGreen />{" "}
-              <HeaderText>Positive (0,25 – 1,0)</HeaderText>
-            </Footer>
-          </MainTemplate>
-        </ViewDiv>
+
         <BottomDiv>
-          <MainTemplate>
-            <Footer className="row">
-              <div className="col-8" />
-              <Score className="col-4">
-                <Media object src="image/score.png" />
-              </Score>
-            </Footer>
-          </MainTemplate>
+
         </BottomDiv>
       </div>
     );
