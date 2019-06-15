@@ -37,10 +37,10 @@ class ChangePassword extends Component {
                 validate={required}
               />
               <Footer>
-                <Button color="primary" onClick={this.toggle}>
+                <Button color="primary" className="primary" onClick={this.toggle}>
                   Change password
                 </Button>{" "}
-                <TextLink to={"/signin"}>Back to sign in</TextLink>
+                <TextLink to={"/signin"}>Back to log in</TextLink>
               </Footer>
             </form>
           )}

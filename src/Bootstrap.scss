@@ -1,8 +1,8 @@
 /* wszelkie zmiany zmiennych*/
-$body-bg: #f6fafd;
+$body-bg: white;
 
 $theme-colors: (
-  "primary": #9585c4,
+  "primary": #1DE278,
   "secondary": #4ec2e2,
   "success": #03cba7,
   "warning": #f6c66c,
@@ -15,13 +15,15 @@ $blue: #4ec2e2;
 
 @import "bootstrap/scss/bootstrap.scss";
 
-/*globalna zmiana wyglądu*/
-
 body {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
   color: $light;
+}
+
+.btn-primary {
+  color: white;
 }
 
 .btn-sm {
@@ -38,6 +40,10 @@ body {
   font-size: 15px;
   padding: 10px 40px;
   font-weight: bold;
+}
+
+.primary {
+  width: 100%;
 }
 
 .form-group label {

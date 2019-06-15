@@ -8,8 +8,8 @@ import {composeValidators, required, email} from "../lib/validation";
 import {Link} from "react-router-dom";
 
 
-import { 
-    Button, 
+import {
+    Button,
     } from 'reactstrap';
 import renderCheckbox from "../components/form/Checkbox";
 
@@ -43,15 +43,14 @@ class SignUp extends Component{
                                     type="checkbox"
                                     name="tos"
                                     component={renderCheckbox}
-                                    label="I agree to the Terms of Service and Privacy Policy"
-                                    validate={required}
+                                    label="Keep me logged in"
                                 />
                                 <Footer>
-                                    <Button color="primary">Sign up</Button>
+                                    <Button color="primary" className="primary">Login</Button>
                                 </Footer>
                                 <Info>
                                     <Text>Already have an account?</Text>
-                                    <TextLink to={"/signin"}>Sign in</TextLink>
+                                    <TextLink to={"/signin"}>Log in</TextLink>
                                 </Info>
                             </form>
                          )}
@@ -69,7 +68,7 @@ const Title = styled.div`
 `;
 
 const Footer = styled.div`
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     align-items: center;
 `;

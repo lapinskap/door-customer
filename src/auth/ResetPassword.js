@@ -7,8 +7,8 @@ import {sleep} from "../lib/utils";
 import {composeValidators, required, email} from "../lib/validation";
 import {Link} from "react-router-dom";
 
-import { 
-    Button, 
+import {
+    Button,
     } from 'reactstrap';
 
 class ResetPassword extends Component{
@@ -33,7 +33,7 @@ class ResetPassword extends Component{
                                 />
                                 <Footer>
                                     <Button color="primary" onClick={this.toggle}>Reset password</Button>{' '}
-                                    <TextLink to={"/signin"}>Back to sign in</TextLink>
+                                    <TextLink to={"/signin"}>Back to log in</TextLink>
                                 </Footer>
                             </form>
                          )}
@@ -51,7 +51,7 @@ const Title = styled.div`
 `;
 
 const Footer = styled.div`
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     align-items: center;
 `;

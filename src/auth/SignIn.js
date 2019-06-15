@@ -7,8 +7,8 @@ import {sleep} from "../lib/utils";
 import {composeValidators, required, email} from "../lib/validation";
 import {Link} from "react-router-dom";
 
-import { 
-    Button, 
+import {
+    Button,
     } from 'reactstrap';
 import renderCheckbox from "../components/form/Checkbox";
 
@@ -16,12 +16,13 @@ class SignIn extends Component{
     onSubmit = async data => {
         await sleep(2000);
         console.log(data);
+
       };
 
     render() {
         return(
             <AuthTemplate>
-                <Title>Sign in your account</Title>
+                <Title>Log in</Title>
                     <Form onSubmit={this.onSubmit}
                         render={({ handleSubmit, pristine, invalid }) => (
                             <form onSubmit={handleSubmit}>
@@ -29,28 +30,29 @@ class SignIn extends Component{
                                     name="email"
                                     component={renderInput}
                                     type="text"
-                                    label="Email address:"
+                                    placeholder="Email address"
                                     validate={composeValidators(required, email)}
                                 />
                                 <Field
                                     name="password"
                                     component={renderInput}
                                     type="password"
-                                    label="Password:"
+                                    placeholder="Password"
                                     validate={required}
                                 />
                                 <Field
                                     type="checkbox"
                                     name="tos"
                                     component={renderCheckbox}
-                                    label="I agree to the Terms of Service and Privacy Policy"
-                                    validate={required}
+                                    label="Keep me logged in"
                                 />
                                 <Footer>
-                                    <Button color="primary" onClick={this.toggle}>Sign in</Button>{' '}
-                                    <TextLink to={"/resetpassword"}>Forgot password?</TextLink>{' '}
-                                    <TextLink to={"/signup"}>Sign up</TextLink>
+                                    <Button color="primary" className="primary" onClick={this.toggle}>Login</Button>
                                 </Footer>
+                                <Info>
+                                    <TextLink to={"/resetpassword"}>Forgot password?</TextLink>
+                                    <TextLink to={"/signup"}>Sign up</TextLink>
+                                </Info>
                             </form>
                          )}
                     />
@@ -60,16 +62,25 @@ class SignIn extends Component{
 }
 
 const Title = styled.div`
-    color: $light;
+    color: #727272;
     margin: 30px 0px;
-    font-size: 19px;
+    font-size: 24px;
     font-weight: 300;
+    display: flex;
+    justify-content: center;
 `;
 
 const Footer = styled.div`
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     align-items: center;
+`;
+
+const Info = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 `;
 
 const TextLink = styled(Link)`
