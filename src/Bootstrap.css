@@ -7066,3 +7066,32 @@ p {
 .no-margin {
   margin: 0px;
   padding: 0px; }
+
+.door {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black; }
+
+.window {
+  background-color: white;
+  width: 20px;
+  height: 20px; }
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  height: 321px;
+  width: 141px;
+  border: 7px solid #000;
+  background-color: black; }
+
+.box {
+  background-color: white;
+  color: #fff;
+  width: 35px;
+  height: 55px;
+  margin: 3.5px; }

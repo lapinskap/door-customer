@@ -13,7 +13,7 @@ import {
     } from 'reactstrap';
 import renderCheckbox from "../components/form/Checkbox";
 
-class SignUp extends Component{
+class SignUp extends Component {
     onSubmit = async data => {
         await sleep(2000);
         console.log(data);

@@ -1,5 +1,5 @@
 import React from "react";
-import "../Bootstrap.css";
+import "../../Bootstrap.css";
 import styled from "styled-components";
 
 import {
