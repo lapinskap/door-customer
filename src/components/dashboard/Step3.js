@@ -3,25 +3,41 @@ import "../../Bootstrap.css";
 import styled from "styled-components";
 
 class Step3 extends React.Component {
+    state = {
+        selectedDoor: "gray"
+    }
+    handleBlackColor = () => {
+        this.setState({selectedColor: "black"});
+        this.handleColor();
+    }
+    handleGrayColor = () => {
+        this.setState({selectedColor: "gray"});
+        this.handleColor();
+    }
+    handleWhiteColor = () => {
+        this.setState({selectedColor: "white"});
+        this.handleColor();
+    }
+    handleColor = () => {
+        const color = this.state.selectedColor;
+        this.props.onSelectColor(color);
+    }
+
     render() {
         return(
             <Container>
             <p>Choose color</p>
             <hr></hr>
             <br/>
-            <input type="radio" id="single"/>
-            <label htmlFor="single">Black</label>
+            <input onChange={this.handleBlackColor} type="radio" id="black" name="color" />
+            <label htmlFor="black">Black</label>
 
-            <input type="radio" id="single"/>
-            <label htmlFor="single">Gray</label>
+            <input onChange={this.handleGraykColor} type="radio" id="gray" name="color" />
+            <label htmlFor="gray">Gray</label>
 
             <br/>
-            <input type="radio" id="double" />
-            <label htmlFor="double">White</label>
-            <br/><br/>
-            <p>Door Size</p>
-            <hr></hr>
-
+            <input onChange={this.handleWhitekColor} type="radio" id="white" name="color" />
+            <label htmlFor="white">White</label>
 
             </Container>
         )

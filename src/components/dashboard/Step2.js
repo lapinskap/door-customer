@@ -8,20 +8,12 @@ class Step2 extends React.Component {
             <Container>
             <p>Door division</p>
             <hr></hr>
-            <input type="radio" id="single" name="door"/>
-            <label htmlFor="single">Single Door</label>
 
+            <label htmlFor="width">Number of beams</label>
+            <input type="number" id="width" min="1" max="4" defaultValue="2"/>
             <br/>
-            <input type="radio" id="double" name="door" />
-            <label htmlFor="double">Double Door</label>
-            <br/><br/>
-            <p>Door Size</p>
-            <hr></hr>
-            <label htmlFor="width">Width</label>
-            <input type="number" id="width" min="0" max="160" value="120"/> cm
-            <br/>
-            <label htmlFor="height">Height</label>
-            <input type="number" id="height" min="0" max="300" value="250"/> cm
+            <label htmlFor="height">Number of posts</label>
+            <input type="number" id="height" min="1" max="4" defaultValue="4"/>
             </Container>
         )
     }

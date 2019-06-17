@@ -2,26 +2,43 @@ import React from "react";
 import "../../Bootstrap.css";
 import styled from "styled-components";
 
-class Step1 extends React.Component {
+export class Step1 extends React.Component {
+    state = {
+        selectedDoor: 1
+    }
+    handleDoor = () => {
+        //pass data back to parent component
+        const door = this.state.selectedDoor;
+        this.props.onSelectDoor(door);
+    }
+
+    handleSingleDoor = () => {
+        this.setState({selectedDoor: 2});
+        this.handleDoor();
+    }
+    handleDoubleDoor = () => {
+        this.setState({selectedDoor: 1});
+        this.handleDoor();
+    }
     render() {
         return(
             <Container>
             <p>Door Type</p>
             <hr></hr>
-            <input type="radio" id="single" name="door"/>
+            <input onChange={this.handleSingleDoor} type="radio" id="single" name="door" defaultValue="1" />
             <label htmlFor="single">Single Door</label>
 
             <br/>
-            <input type="radio" id="double" name="door" />
+            <input onChange={this.handleDoubleDoor} type="radio" id="double" name="door" defaultValue="2"/>
             <label htmlFor="double">Double Door</label>
             <br/><br/>
             <p>Door Size</p>
             <hr></hr>
             <label htmlFor="width">Width</label>
-            <input type="number" id="width" min="0" max="160" value="120"/> cm
+            <input type="number" id="width" min="0" max="160" defaultValue="120"/> cm
             <br/>
             <label htmlFor="height">Height</label>
-            <input type="number" id="height" min="0" max="300" value="250"/> cm
+            <input type="number" id="height" min="0" max="300" defaultValue="240"/> cm
             </Container>
         )
     }
@@ -39,7 +56,7 @@ const Container = styled.div`
   }
 
   #height, #width {
-      width: 44px;
+      width: 50px;
       font-weight: 300;
   }
   #width {

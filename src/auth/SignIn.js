@@ -20,6 +20,35 @@ class SignIn extends Component{
       };
 
     render() {
+        const userAction = async () => {
+            const response = await fetch('https://bench-api.applover.pl/api/v1/login', {
+              method: 'POST',
+              body: {
+                "email": "login@applover.pl",
+                "password": "password123"
+              },
+              headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Host': 'example.org',
+                'Cookie': ''
+              }
+            });
+
+            userAction();
+
+            const myJson = await response.json(); //extract JSON from the http response
+            // do something with myJson
+
+            if (response.status >= 200 && response.status < 400) {
+                console.log(myJson);
+              } else {
+                console.log('error')
+              }
+
+
+            console.log(myJson);
+          }
         return(
             <AuthTemplate>
                 <Title>Log in</Title>

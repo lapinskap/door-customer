@@ -2,6 +2,7 @@ import React from "react";
 import "../Bootstrap.css";
 import styled from "styled-components";
 
+
 const AuthTemplate = ({ children }) => {
     return (
       <HeaderDiv>

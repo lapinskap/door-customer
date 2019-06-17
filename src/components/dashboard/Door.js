@@ -28,6 +28,7 @@ const Door = () => {
 export default Door;
 
 const Wrapper = styled.div`
+  float: left;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

@@ -12,9 +12,11 @@ class Dashboard extends Component {
     super(props);
     this.handleNextStep = this.handleNextStep.bind(this);
     this.handlePreviousStep = this.handlePreviousStep.bind(this);
+    this.handleDoor = this.handleDoor.bind(this);
     this.state = {
+      stepNumber: 1,
       doorType: 1,
-      stepNumber: 1
+      selectedColor: "gray"
     };
   }
 
@@ -34,21 +36,26 @@ class Dashboard extends Component {
 
     });
     }
-
+    handleDoor = (doorValue) => {
+      this.setState({doorType: doorValue});
+    }
+    handleColor = (colorValue) => {
+      this.setState({selectedColor: colorValue});
+    }
 
    renderStep() {
     let stepNumber = this.state.stepNumber;
     if (stepNumber === 1) {
-      return <Step1 />;
+      return <Step1 onSelectDoor={this.handleDoor} />;
     } else if(stepNumber === 2) {
       return <Step2 />;
     } else {
-    return <Step3 />;
+    return <Step3 onSelectColor={this.handleColor}/>;
     }
   };
 
   renderDoor() {
-    if (this.state.doorType = 1) {
+    if (this.state.doorType === 1) {
       return <Door />;
     } else {
       return <div><Door /><Door /></div>;
@@ -79,9 +86,10 @@ class Dashboard extends Component {
         <Steps>
         <ViewDiv>
           {this.renderDoor()}
+
         </ViewDiv>
       <Desc>
-        {this.renderStep()}
+      {this.renderStep()}
       </Desc>
         </Steps>
 
@@ -97,6 +105,7 @@ class Dashboard extends Component {
         disabled={this.state.stepNumber === 3}
         >Next step</button>
         </BottomDiv>
+        <Footer></Footer>
       </div>
     );
   }
@@ -122,6 +131,13 @@ const View = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const Footer = styled.div`
+  clear: both;
+  width: 100%;
+  height: 20%;
+  min-height: 50px;
 `;
 
 
