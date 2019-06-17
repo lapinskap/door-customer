@@ -67,7 +67,7 @@ export default class RenderNavbar extends React.Component {
               object
               src="image/edyta.png"
             />
-            edyta@pqstudio.pl
+            My organization
           </DropdownToggleX>
 
           <DropdownMenuZ>

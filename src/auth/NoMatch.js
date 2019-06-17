@@ -10,7 +10,7 @@ const NoMatch = () => (
     <Wrapper>
       <Number>404</Number>
       <Text>We can't seem to find the page you're looking for.</Text>
-      <StyledLink to={"/"}>Back to dashboard</StyledLink>
+      <StyledLink to={"/dashboard"}>Back to dashboard</StyledLink>
     </Wrapper>
   </Container>
 );
