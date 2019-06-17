@@ -1,5 +1,5 @@
 # door-custom
-React application: views and routes by React Router and Reactstrap. Styled-components alongside SCSS, app written from scratch.
+React application Styled-components, SCSS, app written from scratch using create-react-app.
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,8 +12,9 @@ React application: views and routes by React Router and Reactstrap. Styled-compo
 * [Contact](#contact)
 
 ## General info
-Application written in React.
-Views of the application used to check the quality of given website. Views were written using scss files and `styled-components`. 
+
+Cool platform for a company that produces custom tailored doors. 
+Views were written using scss files and `styled-components`. 
 
 
 ## Screenshots
