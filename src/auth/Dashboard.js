@@ -1,43 +1,59 @@
 import React, { Component } from "react";
 import  styled from "styled-components";
-import MainTemplate from "./MainTemplate";
-import { sleep } from "../lib/utils";
 import RenderNavbar from "../components/menu/Navbar";
 import Circles from "../components/dashboard/Circle";
 import Door from "../components/dashboard/Door";
+import Step1 from "../components/dashboard/Step1";
+import Step2 from "../components/dashboard/Step2";
+import Step3 from "../components/dashboard/Step3";
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    this.handleNextStep = this.handleNextStep.bind(this);
+    this.handlePreviousStep = this.handlePreviousStep.bind(this);
     this.state = {
       doorType: 1,
       stepNumber: 1
     };
-    // this.handleClick = this.handleClick.bind(this);
   }
 
+  handleNextStep() {
+      this.setState((prevState)=> {
+          return {
+              stepNumber: prevState.stepNumber + 1
+          };
+      });
+      }
 
-  onSubmit = async data => {
-    await sleep(2000);
-    console.log(data);
-  };
+    handlePreviousStep() {
+    this.setState((prevState)=> {
+        return {
+            stepNumber: prevState.stepNumber - 1
+        };
 
-   renderStep(props) {
-    const stepNumber = props.stepNumber;
-    if (stepNumber == 1) {
-      return <Circles />;
+    });
     }
-    return <Door />;
+
+
+   renderStep() {
+    let stepNumber = this.state.stepNumber;
+    if (stepNumber === 1) {
+      return <Step1 />;
+    } else if(stepNumber === 2) {
+      return <Step2 />;
+    } else {
+    return <Step3 />;
+    }
   };
 
-  renderDoor(doorType) {
-    if (doorType = 1) {
+  renderDoor() {
+    if (this.state.doorType = 1) {
       return <Door />;
     } else {
       return <div><Door /><Door /></div>;
     }
   }
-
 
   render() {
     return (
@@ -65,15 +81,21 @@ class Dashboard extends Component {
           {this.renderDoor()}
         </ViewDiv>
       <Desc>
-      <MainTemplate>
-        hello its me
-      </MainTemplate>
+        {this.renderStep()}
       </Desc>
         </Steps>
 
         <BottomDiv>
-        <button>Next step</button>
-        <button>Back</button>
+        <button
+        className="btn btn-default"
+        onClick={this.handlePreviousStep}
+        disabled={this.state.stepNumber === 1}
+        >Back</button>
+        <button
+        className="btn btn-secondary"
+        onClick={this.handleNextStep}
+        disabled={this.state.stepNumber === 3}
+        >Next step</button>
         </BottomDiv>
       </div>
     );
@@ -121,10 +143,8 @@ const Desc = styled.div`
   width: 40%;
   float: left;
   margin: 0px auto 0px auto;
-  padding: 80px 80px 35px 30px;
+  padding: 10px 80px 35px 30px;
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const Steps = styled.div`

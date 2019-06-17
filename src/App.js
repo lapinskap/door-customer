@@ -6,8 +6,6 @@ import SignUp from "./auth/SignUp";
 import ResetPassword from "./auth/ResetPassword";
 import ChangePassword from "./auth/ChangePassword";
 import Dashboard from "./auth/Dashboard";
-import Profile from "./auth/Profile";
-import contactpage from "./auth/ContactPage";
 
 import NoMatch from "./auth/NoMatch";
 
@@ -36,8 +34,6 @@ class App extends Component {
           <Route path={"/resetpassword"} component={ResetPassword} />
           <Route path={"/changepassword"} component={ChangePassword} />
           <Route path={"/dashboard"} component={Dashboard} />
-          <Route path={"/profile"} component={Profile} />
-          <Route path={"/contactpage"} component={contactpage} />
           <Route component={NoMatch} />
         </Switch>
       </Router>

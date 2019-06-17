@@ -42,11 +42,6 @@ export default class RenderNavbar extends React.Component {
         <Container>
           <Row>
             <Nav navbar style={{ marginLeft: "110px" }}>
-              <NavItems>
-                <BottomText href={"/dashboard"}>
-                  <MdPageview /> PAGE TEST
-                </BottomText>
-              </NavItems>
               <NavItemsEnd>
                 <BottomText href={"/profile"}>
                   <FaCog /> SETTINGS
