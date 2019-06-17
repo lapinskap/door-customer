@@ -18,7 +18,7 @@ Views were written using scss files and `styled-components`.
 
 
 ## Screenshots
-![Example screenshot]()
+![Example screenshot](https://github.com/lapinskap/door-customer/blob/master/img/loginpage.jpg)
 
 ## Technologies
 * React
