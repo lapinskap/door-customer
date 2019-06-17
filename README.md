@@ -12,30 +12,28 @@ React application: views and routes by React Router and Reactstrap. Styled-compo
 * [Contact](#contact)
 
 ## General info
-
-Views of the application used to check the quality of given website. Views were written using reactstrap and `styled-components`.
-Backend is practically unaffected (at the present time).
-I would like to write it some day - with Node or Ruby on Rails.
+Application written in React.
+Views of the application used to check the quality of given website. Views were written using scss files and `styled-components`. 
 
 
 ## Screenshots
 ![Example screenshot]()
 
 ## Technologies
-* React - Javascript library
-* yarn
+* React
 * React Router
 * styled-components
+* Sass
 
 ## Setup
 
-You need to have yarn or npm installed on your computer. I prefer yarn:
+You need to have yarn or npm installed on your computer. Use following commands to get started:
 
 ```
 $ cd door-custom/
-$ yarn
-$ yarn run build
-$ yarn run start
+$ npm install
+$ npm run build
+$ npm run start
 ```
 
 ## Code Examples
@@ -53,45 +51,61 @@ Here are scripts you can run with this application. Type `yarn run` + script-nam
     "eject": "react-scripts eject"
   }
 ```
-`stateless functional component` and usage of Reactstrap + styled-components. A container that does not have to exist in a separate file, but if it already exists, it's easy to paste it into readme!
+a piece of code from SignIn component:
 
 ```javascript
-import React from "react";
-import "../Bootstrap.css";
-import styled from "styled-components";
-
-const MainTemplate = ({ children }) => {
-  return (
-      <HeaderText>
-        {children}
-      </HeaderText>
-  );
-};
-
-const HeaderText = styled.div`
-  color: #7387a9;
-  font-weight: 600;
-  padding: 8px 0px 0px 15px;
-  font-size: 15px;
-`;
-
-export default MainTemplate;
+        return(
+            <AuthTemplate>
+                <Title>Log in</Title>
+                    <Form onSubmit={this.onSubmit}
+                        render={({ handleSubmit, pristine, invalid }) => (
+                            <form onSubmit={handleSubmit}>
+                                <Field
+                                    name="email"
+                                    component={renderInput}
+                                    type="text"
+                                    placeholder="Email address"
+                                    validate={composeValidators(required, email)}
+                                />
+                                <Field
+                                    name="password"
+                                    component={renderInput}
+                                    type="password"
+                                    placeholder="Password"
+                                    validate={required}
+                                />
+                                <Field
+                                    type="checkbox"
+                                    name="tos"
+                                    component={renderCheckbox}
+                                    label="Keep me logged in"
+                                />
+                                <Footer>
+                                    <Button color="primary" className="primary" onClick={this.toggle}>Login</Button>
+                                </Footer>
+                                <Info>
+                                    <TextLink to={"/resetpassword"}>Forgot password?</TextLink>
+                                    <TextLink to={"/signup"}>Sign up</TextLink>
+                                </Info>
+                            </form>
+                         )}
+                    />
+            </AuthTemplate>
+        );
 ```
 
 ## Features
 List of features ready and TODOs for future development
 * styled-components 
 * reactstrap (similar to bootstrap)
-* Awesome views!
+* Moar awesome views!
 
 To-do list:
-* Add Redux 
-* Add connection with API?
+* Add hosting
+* write tests with Jest
 
 ## Status
-Project is: 
-
-Frontend: _in  progress_
+Project is: _in  progress_
 
 
 
