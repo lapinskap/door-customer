@@ -46,11 +46,11 @@ class SignUp extends Component {
                                     label="Keep me logged in"
                                 />
                                 <Footer>
-                                    <Button color="primary" className="primary">Login</Button>
+                                    <Button color="primary" className="primary">Sign Up</Button>
                                 </Footer>
                                 <Info>
                                     <Text>Already have an account?</Text>
-                                    <TextLink to={"/signin"}>Log in</TextLink>
+                                    <TextLink to={"/signin"}>L</TextLink>
                                 </Info>
                             </form>
                          )}

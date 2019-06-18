@@ -9,118 +9,89 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledButtonDropdown,
+  UncontrolledDropdown,
   Row,
   Container,
   Dropdown
 } from "reactstrap";
 import styled from "styled-components";
-import FaCog from "react-icons/lib/fa/cog";
 import FaPowerOff from "react-icons/lib/fa/power-off";
 
 export default class RenderNavbar extends React.Component {
   constructor(props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
+    this.handleOnLoad = this.handleOnLoad.bind(this);
     this.state = {
-      dropdownOpen: false,
-      dropdownOpen2: false
+
+        id: 1,
+        name: "Weissnat-Ward",
+        email: "kareybruen@vandervortkoepp.net",
+        phone_number: "1-228-585-5990",
+        address_line_1: "3697 Huey Summit",
+        address_line_2: "Apt. 399",
+        city: "North Charlineberg",
+        postal_code: "96032-0855"
+
     };
   }
 
-  toggle() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }));
+  logOut() {
+    window.localStorage.isAuthenticated = false;
+    window.sessionStorage.isAuthenticated = false;
+  }
 
-    this.setState(prevState => ({
-      dropdownOpen2: !prevState.dropdownOpen2
-    }));
+  handleOnLoad = async event => {
+    event.preventDefault();
+      try {
+        fetch('https://bench-api.applover.pl/api/v1/organization', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJvcmdhbml6YXRpb25faWQiOjEsImV4cCI6MTU2MTYzOTY3MywiY3JlYXRlZF9hdCI6IjIwMTktMDYtMTMgMTI6NDc6NTMgVVRDIn0.Vgxl0OEb-1tFNmDUzyGjIydIOeUg4cCkYuVqa_tDfD0',
+              'Host': 'example.org',
+              'Cookie': ''
+            }
+            }).then(response => response.json())
+            .then(data => this.setState({ response: data })).then(data => console.log(data));
+    } catch (e) {
+      alert(e.message);
+    }
   }
 
   render() {
-    const request =  new XMLHttpRequest();
-    request.open('GET', 'https://bench-api.applover.pl/api/v1/organization', true)
-    request.onload = function () {
-      const data = JSON.parse(this.response);
-
-      if (request.status >= 200 && request.status < 400) {
-        console.log(data);
-      } else {
-        console.log('error')
-      }
-
-      }
-
-    request.send()
-
     return (
-      <Navbar expand="md" style={{ padding: "0" }}>
+      <Navbar expand="md" style={{ padding: "0" }} onLoad={this.handleOnLoad}>
         <Logo>
           <Media object src="image/logo.png" />
         </Logo>
 
-        <UncontrolledButtonDropdown>
-        <DropdownToggle caret size="lg">
-          Select Language
-        </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem>Polish</DropdownItem>
-          <DropdownItem>English</DropdownItem>
-        </DropdownMenu>
-      </UncontrolledButtonDropdown>
+        <Select>
+          <UncontrolledDropdown className="select">
+          <DropdownToggle caret size="lg">
+            Select Language
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>Polish</DropdownItem>
+            <DropdownItem>English</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+        </Select>
 
-      <UncontrolledButtonDropdown>
+      { window.sessionStorage.isAuthenticated === "true" ? <UncontrolledButtonDropdown>
         <DropdownToggle caret size="lg">
           My organization
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>some api here</DropdownItem>
-          <DropdownItem href={"/signin"}>
+        <DropdownItem>
+          <i>{this.state.name}</i>
+          </DropdownItem>
+          <DropdownItem onClick={this.logOut} href={"/signin"}>
           <FaPowerOff style={{ margin: "5px", marginBottom: "7px" }} />
           Log out
           </DropdownItem>
         </DropdownMenu>
-      </UncontrolledButtonDropdown>
-
-        <ControlledDropdown
-        Navbar={true}
-        isOpen={this.state.dropdownOpen2}
-        toggle={this.toggle}
-      >
-        <DropdownToggleX nav>
-          Select Language
-        </DropdownToggleX>
-
-        <DropdownMenu>
-          <DropdownItem href={"/dashboard?lng=pl"}>
-          <p>Polish</p>
-          </DropdownItem>
-          <DropdownItem href={"/dashboard/dashboard?lng=en"}>
-           English
-          </DropdownItem>
-        </DropdownMenu>
-      </ControlledDropdown>
-
-        <UncontrolledDropdownX
-          inNavbar={true}
-          isOpen={this.state.dropdownOpen}
-          toggle={this.toggle}
-        >
-          <DropdownToggleX nav>
-          <button className="btn btn-secondary">My organization</button>
-          </DropdownToggleX>
-
-          <DropdownMenuZ>
-            <DropdownItemY href={"/"}>
-            <p>sample data from api</p>
-            </DropdownItemY>
-            <DropdownItemY href={"/signin"}>
-              <FaPowerOff style={{ margin: "5px", marginBottom: "7px" }} /> Log
-              out
-            </DropdownItemY>
-          </DropdownMenuZ>
-        </UncontrolledDropdownX>
+      </UncontrolledButtonDropdown> : null}
       </Navbar>
     );
   }
@@ -138,11 +109,32 @@ const NavItemsEnd = styled(NavItem)`
   }
 `;
 
-const UncontrolledDropdownX = styled(Dropdown)`
+const Select = styled.div`
+  .select {
+     background-color: #fff;
+    width: 400px;
+  font-weight: 500;
+  padding: 0px 20px;
+  border-left: 1px solid #eee;
+
+  padding: 12px 40px;
+  border: 2px solid #ebf2fa;
+  &:hover {
+    border-bottom: 2px solid #4ec2e2;
+
+    border-top: 0;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 3px;
+  }
+
+  }
+
   width: 400px;
   font-weight: 500;
   padding: 0px 20px;
   border-left: 1px solid #eee;
+  margin-left: 600px;
 `;
 
 const ControlledDropdown = styled(Dropdown)`

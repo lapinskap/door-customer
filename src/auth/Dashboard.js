@@ -157,10 +157,13 @@ const ViewDiv = styled.div`
 
 const Desc = styled.div`
   width: 40%;
+  min-height: 400px;
   float: left;
   margin: 0px auto 0px auto;
   padding: 10px 80px 35px 30px;
   display: flex;
+
+  }
 `;
 
 const Steps = styled.div`

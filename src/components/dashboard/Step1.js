@@ -35,10 +35,10 @@ export class Step1 extends React.Component {
             <p>Door Size</p>
             <hr></hr>
             <label htmlFor="width">Width</label>
-            <input type="number" id="width" min="0" max="160" defaultValue="120"/> cm
+            <input type="number" id="width" min="1" max="160" defaultValue="120"/> cm
             <br/>
             <label htmlFor="height">Height</label>
-            <input type="number" id="height" min="0" max="300" defaultValue="240"/> cm
+            <input type="number" id="height" min="1" max="300" defaultValue="240"/> cm
             </Container>
         )
     }
