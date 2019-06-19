@@ -67,7 +67,7 @@ export default class RenderNavbar extends React.Component {
             Select Language
         </SelectLanguage>
          <Language>
-        <select style={{ padding: "0px" }}>
+        <select className="form-control select__lang">
           <option lan="en">English</option>
           <option lan="pl">Polish</option>
         </select>
@@ -106,9 +106,5 @@ const SelectLanguage = styled(Dropdown)`
   font-weight: 500;
   padding: 0px 0px;
   margin: 0px;
-`;
-
-const DropdownToggleX = styled(DropdownToggle)`
-  color: #94a2bf;
 `;
 

@@ -4,25 +4,21 @@ import styled from "styled-components";
 
 class Step3 extends React.Component {
     state = {
-        selectedDoor: "gray"
+        selectedColor: "gray"
     }
     handleBlackColor = () => {
         this.setState({selectedColor: "black"});
-        this.handleColor();
+        this.props.onSelectColor(this.state.selectedColor);
     }
     handleGrayColor = () => {
         this.setState({selectedColor: "gray"});
-        this.handleColor();
+        this.props.onSelectColor(this.state.selectedColor);
     }
     handleWhiteColor = () => {
         this.setState({selectedColor: "white"});
-        this.handleColor();
+        this.props.onSelectColor(this.state.selectedColor);
     }
-    handleColor = () => {
-        const color = this.state.selectedColor;
-        this.props.onSelectColor(color);
-    }
-
+   
     render() {
         return(
             <Container>
@@ -60,7 +56,6 @@ const Container = styled.div`
     padding-left: 5px;
     clear: both;
   }
-
   .radius {
       width: 35px;
       height: 35px;
@@ -68,11 +63,9 @@ const Container = styled.div`
       float: left;
       margin: 5px;
   }
-
   .black {
       background-color: #000000;
   }
-  
   .gray {
       background-color: #797474;
       margin-left: 40px;
@@ -85,7 +78,6 @@ const Container = styled.div`
       margin: 5px;
       float: left;
   }
-
   .x {
     margin-left: 14px;
     margin-right: 14px;

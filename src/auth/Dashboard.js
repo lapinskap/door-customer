@@ -38,6 +38,7 @@ class Dashboard extends Component {
     }
     handleDoor = (doorValue) => {
       this.setState({doorType: doorValue});
+      console.log(this.state.doorType);
     }
     handleColor = (colorValue) => {
       this.setState({selectedColor: colorValue});
