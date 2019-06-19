@@ -29,15 +29,22 @@ class Step3 extends React.Component {
             <p>Choose color</p>
             <hr></hr>
             <br/>
-            <input onChange={this.handleBlackColor} type="radio" id="black" name="color" />
-            <label htmlFor="black">Black</label>
-
-            <input onChange={this.handleGraykColor} type="radio" id="gray" name="color" />
-            <label htmlFor="gray">Gray</label>
-
-            <br/>
-            <input onChange={this.handleWhitekColor} type="radio" id="white" name="color" />
-            <label htmlFor="white">White</label>
+            <div className="radius black"></div>
+            <div className="radius gray"></div>
+            <div className="radius white"></div>
+            <div className="color">
+                <input onChange={this.handleBlackColor} type="radio" id="black" name="color" />
+                <label htmlFor="black">Black</label>
+            </div>
+            <div className="color x">
+                <input onChange={this.handleGraykColor} type="radio" id="gray" name="color" />
+                <label htmlFor="gray">Gray</label>
+            </div>
+            <div className="color">
+                <input onChange={this.handleWhitekColor} type="radio" id="white" name="color" />
+                <label htmlFor="white">White</label>
+            </div>
+            
 
             </Container>
         )
@@ -51,6 +58,38 @@ const Container = styled.div`
 
   label {
     padding-left: 5px;
+    clear: both;
   }
+
+  .radius {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      float: left;
+      margin: 5px;
+  }
+
+  .black {
+      background-color: #000000;
+  }
+  
+  .gray {
+      background-color: #797474;
+      margin-left: 40px;
+      margin-right: 40px;
+  }
+  .white {
+    background-color: #F4F2F2;
+  }
+  .color {
+      margin: 5px;
+      float: left;
+  }
+
+  .x {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+  
 
 `;

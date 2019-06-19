@@ -3,8 +3,6 @@ import {
   Media,
   Navbar,
   Nav,
-  NavItem,
-  NavLink,
   DropdownToggle,
   UncontrolledButtonDropdown,
   DropdownMenu,
@@ -14,29 +12,22 @@ import {
   Dropdown
 } from "reactstrap";
 import styled from "styled-components";
-import FaCog from "react-icons/lib/fa/cog";
-import MdPageview from "react-icons/lib/md/pageview";
 import FaPowerOff from "react-icons/lib/fa/power-off";
 
 export default class RenderNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.handleOnLoad = this.handleOnLoad.bind(this);
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      dropdownOpen: false
-    };
+      name: 'test',
+      data: ''
+    }
   }
+  
 
   logOut() {
     window.localStorage.isAuthenticated = false;
     window.sessionStorage.isAuthenticated = false;
-  }
-
-  toggle() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }));
   }
 
   handleOnLoad = async event => {
@@ -49,10 +40,11 @@ export default class RenderNavbar extends React.Component {
               'Accept': 'application/json',
               'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJvcmdhbml6YXRpb25faWQiOjEsImV4cCI6MTU2MTYzOTY3MywiY3JlYXRlZF9hdCI6IjIwMTktMDYtMTMgMTI6NDc6NTMgVVRDIn0.Vgxl0OEb-1tFNmDUzyGjIydIOeUg4cCkYuVqa_tDfD0',
               'Host': 'example.org',
-              'Cookie': ''
+              'Cookie': '',
             }
             }).then(response => response.json())
-            .then(data => this.setState({ response: data })).then(data => console.log(data));
+                .then(response => console.log(response))
+                  .then(response => this.setState({ data: response }));
     } catch (e) {
       alert(e.message);
     }
@@ -60,20 +52,35 @@ export default class RenderNavbar extends React.Component {
 
   render() {
     return (
-      <Navbar expand="md" style={{ padding: "0" }}>
+      <Navbar
+      onLoad={this.handleOnLoad} 
+      expand="md" style={{ padding: "0" }}>
         <Logo>
           <Media object src="image/logo.png" />
         </Logo>
         <Container>
           <Row>
-            <Nav navbar style={{ marginLeft: "110px" }}>
+          </Row>
+        </Container>
+
+        <SelectLanguage>
+            Select Language
+        </SelectLanguage>
+         <Language>
+        <select style={{ padding: "0px" }}>
+          <option lan="en">English</option>
+          <option lan="pl">Polish</option>
+        </select>
+        </Language>
+        <Nav navbar style={{ marginRight: "20px", padding: "0px" }}>
             { window.sessionStorage.isAuthenticated === "true" ? <UncontrolledButtonDropdown>
             <DropdownToggle caret size="lg">
               My organization
             </DropdownToggle>
             <DropdownMenu>
             <DropdownItem>
-              <i>{this.state.name}</i>
+              <i>organization</i>
+              <i>{this.state.data}</i>
               </DropdownItem>
               <DropdownItem onClick={this.logOut} href={"/signin"}>
               <FaPowerOff style={{ margin: "5px", marginBottom: "7px" }} />
@@ -82,80 +89,23 @@ export default class RenderNavbar extends React.Component {
             </DropdownMenu>
               </UncontrolledButtonDropdown> : null}
             </Nav>
-          </Row>
-        </Container>
-
-        <UncontrolledDropdownX
-          inNavbar={true}
-          isOpen={this.state.dropdownOpen}
-          toggle={this.toggle}
-        >
-          <DropdownToggleX nav>
-            Select Language
-          </DropdownToggleX>
-
-          <DropdownMenuZ>
-            <DropdownItemY>
-              Polish
-            </DropdownItemY>
-            <DropdownItemY>
-              English
-            </DropdownItemY>
-          </DropdownMenuZ>
-        </UncontrolledDropdownX>
       </Navbar>
     );
   }
 }
 
-const Logo = styled.div`
+const Language = styled.div`
   padding: 20px 25px;
 `;
 
-const BottomText = styled(NavLink)`
-  color: #7387a9;
-  font-weight: 600;
-  font-size: 14px;
+const Logo = styled.div`
+  padding: 20px 25px;
 `;
-
-const NavItems = styled(NavItem)`
-  padding: 12px 40px;
-  border-left: 2px solid #ebf2fa;
-  border-top: 2px solid #ebf2fa;
-  border-bottom: 2px solid #ebf2fa;
-  &:hover {
-    border-bottom: 2px solid #4ec2e2;
-  }
-`;
-
-const NavItemsEnd = styled(NavItem)`
-  padding: 12px 40px;
-  border: 2px solid #ebf2fa;
-  &:hover {
-    border-bottom: 2px solid #4ec2e2;
-  }
-`;
-
-const UncontrolledDropdownX = styled(Dropdown)`
+const SelectLanguage = styled(Dropdown)`
   width: 400px;
   font-weight: 500;
-  padding: 0px 20px;
-  border-left: 1px solid #eee;
-`;
-
-const DropdownMenuZ = styled(DropdownMenu)`
-  border-top: 0;
-  background-color: #fff;
-  width: 100%;
-  border-radius: 3px;
-`;
-
-const DropdownItemY = styled(DropdownItem)`
-  border-top: 0;
-  color: #94a2bf;
-  &:hover svg {
-    color: #4ec2e2;
-  }
+  padding: 0px 0px;
+  margin: 0px;
 `;
 
 const DropdownToggleX = styled(DropdownToggle)`

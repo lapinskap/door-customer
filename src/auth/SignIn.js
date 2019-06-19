@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {Form, Field} from "react-final-form";
+import {Form} from "react-final-form";
 import AuthTemplate from "./AuthTemplate";
 import renderInput from "../components/form/Input";
 import {sleep} from "../lib/utils";

@@ -94,13 +94,12 @@ class Dashboard extends Component {
         </Steps>
 
         <BottomDiv>
-        <button
-        className="btn btn-default"
+        { this.state.stepNumber !== 1 ? <button
+        className="btn btn-default btn-back"
         onClick={this.handlePreviousStep}
-        disabled={this.state.stepNumber === 1}
-        >Back</button>
+        >Back</button> : null }
         <button
-        className="btn btn-secondary"
+        className="btn btn-secondary btn-next"
         onClick={this.handleNextStep}
         disabled={this.state.stepNumber === 3}
         >Next step</button>

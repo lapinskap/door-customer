@@ -3,10 +3,10 @@ $body-bg: white;
 
 $theme-colors: (
   "primary": #1DE278,
-  "secondary": #4ec2e2,
+  "secondary": #6F91AA,
   "success": #03cba7,
   "warning": #f6c66c,
-  "danger": #ec6670
+  "danger": #ec6670,
 );
 
 $dark: #7387a9;
@@ -39,7 +39,8 @@ body {
 .btn {
   font-size: 15px;
   padding: 10px 40px;
-  font-weight: bold;
+  font-weight: 400;
+  border-radius: 2px;
 }
 
 .primary {
@@ -72,4 +73,21 @@ p {
 .no-margin {
   margin: 0px;
   padding: 0px;
+}
+
+.btn-secondary {
+  border-radius: 2px;
+  padding: 5px 40px 5px 40px;
+}
+
+.btn-next {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.btn-back {
+  border-radius: 2px;
+  border: 2px solid #6F91AA;
+  padding: 5px 45px 5px 45px;
+  font-size: 16px;
 }

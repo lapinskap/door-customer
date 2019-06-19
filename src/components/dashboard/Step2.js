@@ -9,11 +9,11 @@ class Step2 extends React.Component {
             <p>Door division</p>
             <hr></hr>
 
-            <label htmlFor="width">Number of beams</label>
-            <input type="number" id="width" min="1" max="4" defaultValue="2"/>
+            <label htmlFor="width" >Number of beams</label>
+            <input type="number" id="width" className="division" min="1" max="4" defaultValue="2"/>
             <br/>
             <label htmlFor="height">Number of posts</label>
-            <input type="number" id="height" min="1" max="4" defaultValue="4"/>
+            <input type="number" id="height" className="division" min="1" max="4" defaultValue="4"/>
             </Container>
         )
     }
@@ -39,5 +39,10 @@ const Container = styled.div`
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
+  }
+
+  .division {
+    width: 30px;
+    margin-left: 10px;
   }
 `;
