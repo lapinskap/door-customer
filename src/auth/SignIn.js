@@ -99,7 +99,6 @@ class SignIn extends Component {
         return(
         <div>
         <RenderNavbar />
-        <button onClick={this.openModal}>Open Modal</button>
         <ModalScreen  isOpen={this.state.isOpen}
         ></ModalScreen>
         <AuthTemplate>

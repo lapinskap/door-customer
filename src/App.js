@@ -18,7 +18,7 @@ import {
 class App extends Component {
 
   render() {
-    //here I am pretending to have silly authorization on the frontend
+    //here I am pretending to have authorization on the frontend
     const PrivateRoute = ({ component: Component, ...rest }) => (
             <Route {...rest} render={(props) => (
         window.sessionStorage.isAuthenticated === true ||  window.sessionStorage.isAuthenticated === "true" ||
