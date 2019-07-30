@@ -18,7 +18,23 @@ Views were written using scss files and `styled-components`.
 
 
 ## Screenshots
-![Example screenshot](https://github.com/lapinskap/door-customer/blob/master/img/loginpage.jpg)
+![login page](https://github.com/lapinskap/door-customer/blob/master/img/loginpage.jpg)
+![door1](https://github.com/lapinskap/door-customer/blob/master/screens/door1.jpg)
+![door2](https://github.com/lapinskap/door-customer/blob/master/screens/door2.jpg)
+![door3](https://github.com/lapinskap/door-customer/blob/master/screens/door3.jpg)
+![door4](https://github.com/lapinskap/door-customer/blob/master/screens/door4.jpg)
+![door44](https://github.com/lapinskap/door-customer/blob/master/screens/door44.jpg)
+![door6](https://github.com/lapinskap/door-customer/blob/master/screens/door6.jpg)
+![door7](https://github.com/lapinskap/door-customer/blob/master/screens/door7.jpg)
+![door8](https://github.com/lapinskap/door-customer/blob/master/screens/door8.jpg)
+
+
+
+
+
+
+
+
 
 ## Technologies
 * React
