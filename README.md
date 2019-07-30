@@ -3,9 +3,11 @@ React application Styled-components, SCSS, app written from scratch using create
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
+* [Login Page](#login-page)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Code examples](#code-examples)
+* [More screenshots](#more-screenshots)
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
@@ -17,22 +19,8 @@ Cool platform for a company that produces custom tailored doors.
 Views were written using scss files and `styled-components`. 
 
 
-## Screenshots
+## Login Page
 ![login page](https://github.com/lapinskap/door-customer/blob/master/img/loginpage.jpg)
-![door1](https://github.com/lapinskap/door-customer/blob/master/screens/door1.jpg)
-![door2](https://github.com/lapinskap/door-customer/blob/master/screens/door2.jpg)
-![door3](https://github.com/lapinskap/door-customer/blob/master/screens/door3.jpg)
-![door4](https://github.com/lapinskap/door-customer/blob/master/screens/door4.jpg)
-![door44](https://github.com/lapinskap/door-customer/blob/master/screens/door44.jpg)
-![door6](https://github.com/lapinskap/door-customer/blob/master/screens/door6.jpg)
-![door7](https://github.com/lapinskap/door-customer/blob/master/screens/door7.jpg)
-![door8](https://github.com/lapinskap/door-customer/blob/master/screens/door8.jpg)
-
-
-
-
-
-
 
 
 
@@ -110,6 +98,16 @@ a piece of code from SignIn component:
             </AuthTemplate>
         );
 ```
+
+## More Screenshots
+![door1](https://github.com/lapinskap/door-customer/blob/master/screens/door1.jpg)
+![door2](https://github.com/lapinskap/door-customer/blob/master/screens/door2.jpg)
+![door3](https://github.com/lapinskap/door-customer/blob/master/screens/door3.jpg)
+![door4](https://github.com/lapinskap/door-customer/blob/master/screens/door4.jpg)
+![door44](https://github.com/lapinskap/door-customer/blob/master/screens/door44.jpg)
+![door6](https://github.com/lapinskap/door-customer/blob/master/screens/door6.jpg)
+![door7](https://github.com/lapinskap/door-customer/blob/master/screens/door7.jpg)
+![door8](https://github.com/lapinskap/door-customer/blob/master/screens/door8.jpg)
 
 ## Features
 List of features ready and TODOs for future development
