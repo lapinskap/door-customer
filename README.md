@@ -3,7 +3,7 @@ React application Styled-components, SCSS, app written from scratch using create
 
 ## Table of contents
 * [General info](#general-info)
-* [Login Page](#login-page)
+* [Sample screenshots](#sample-screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Code examples](#code-examples)
@@ -19,9 +19,9 @@ Cool platform for a company that produces custom tailored doors.
 Views were written using scss files and `styled-components`. 
 
 
-## Login Page
+## Sample screenshots
 ![login page](https://github.com/lapinskap/door-customer/blob/master/img/loginpage.jpg)
-
+![door1](https://github.com/lapinskap/door-customer/blob/master/screens/door1.jpg)
 
 
 ## Technologies
@@ -100,7 +100,6 @@ a piece of code from SignIn component:
 ```
 
 ## More Screenshots
-![door1](https://github.com/lapinskap/door-customer/blob/master/screens/door1.jpg)
 ![door2](https://github.com/lapinskap/door-customer/blob/master/screens/door2.jpg)
 ![door3](https://github.com/lapinskap/door-customer/blob/master/screens/door3.jpg)
 ![door4](https://github.com/lapinskap/door-customer/blob/master/screens/door4.jpg)
