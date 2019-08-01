@@ -1,5 +1,9 @@
-# door-custom
-React application Styled-components, SCSS, app written from scratch using create-react-app.
+# Door Customer
+React application with styled-components and SCSS. App written from scratch using create-react-app.
+
+
+I like idea of this project and I'm going to do some refactoring here, It should show my current coding skills in near future. 
+
 
 ## Table of contents
 * [General info](#general-info)
