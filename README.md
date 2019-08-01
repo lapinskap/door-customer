@@ -2,7 +2,7 @@
 React application with styled-components and SCSS. App written from scratch using create-react-app.
 
 
-I like idea of this project and I'm going to do some refactoring here, It should show my current coding skills in near future. 
+I like idea of this project and I'm going to do some refactoring here, It should show my current coding skills in near future.  Now this project has status _in progress_, few stuff is not yet implemented.
 
 
 ## Table of contents
@@ -119,8 +119,9 @@ List of features ready and TODOs for future development
 * Moar awesome views!
 
 To-do list:
-* Add hosting
 * write tests with Jest
+* Delete reactstrap features, add flexbox
+* implement great authentication 
 
 ## Status
 Project is: _in  progress_
